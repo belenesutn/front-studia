@@ -1,0 +1,35 @@
+name: Deploy Console to Pages
+
+on:
+  push:
+    branches: [ master ]
+
+    workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Clone repository
+      - name: Clone repository
+        uses: actions/checkout@v3
+      # Import node and npm
+      - name: Import node and npm
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
+      # Create build
+      - name: Build Studia Front
+        run: npm run build
+      # Deploy Preview to CloudFlare Pages
+      - name: Deploy to CloudFlare Pages
+        uses: cloudflare/pages-action@1
+        id: cloudflare-deploy
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          projectName: studia-web
+          directory: dist/
