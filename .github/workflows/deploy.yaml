@@ -33,3 +33,4 @@ jobs:
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
           projectName: studia-web
           directory: dist/
+          branch: main
