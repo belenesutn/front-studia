@@ -51,7 +51,8 @@ function Navbar() {
         </div>
         <div className="links">
           <span>Tutores</span>
-          <span>Como Funciona</span>
+          <Link to="/about">
+          <span>Como Funciona</span></Link>
           {!currentUser?.isTutor && <span>Conviertete en Tutor</span>}
           {currentUser ? (
             <div className="user" onClick={()=>setOpen(!open)}>

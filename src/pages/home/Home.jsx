@@ -1,9 +1,8 @@
 import React from 'react'
 import Featured from '../../components/featured/Featured'
 import "./Home.scss"
-import Slide from "../../components/slide/Slide";
-import { projects } from "../../data";
-import ProjectCard from "../../components/projectCard/ProjectCard";
+import { Link } from "react-router-dom";
+
 
 function Home() {
   return (
@@ -32,7 +31,9 @@ function Home() {
               <img src="./img/check.png" alt="" />
               Asiste a tus clases particulares y mejora tus conocimientos
             </div>
+            <Link to="/about">
             <button>Ver Mas</button>
+            </Link>
           </div>
           <div className="item">
             <img

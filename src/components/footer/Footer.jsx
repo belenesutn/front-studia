@@ -21,10 +21,6 @@ function Footer() {
               </a>
             </div>
             <div className="link">
-              <img src="/img/language.png" alt="" />
-              <span>Español</span>
-            </div>
-            <div className="link">
               <img src="/img/coin.png" alt="" />
               <span>ARS</span>
             </div>

@@ -4,6 +4,8 @@ import React from "react";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import Home from "./pages/home/Home";
+import About from "./pages/about/about"
+import AboutTutor from "./pages/aboutTutor/aboutTutor"
 import Gigs from "./pages/gigs/Gigs";
 import Gig from "./pages/gig/Gig";
 import Login from "./pages/login/Login";
@@ -37,6 +39,14 @@ function App() {
         {
           path: "/",
           element: <Home />,
+        },
+        {
+          path: "/about",
+          element: <About />,
+        },
+        {
+          path: "/aboutTutor",
+          element: <AboutTutor />,
         },
         {
           path: "/gigs",
