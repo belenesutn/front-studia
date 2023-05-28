@@ -16,7 +16,9 @@ function Footer() {
             <div className="social">
               <img src="/img/twitter.png" alt="" />
               <img src="/img/linkedin.png" alt="" />
+              <a href="https://www.instagram.com/proyecto.studia/">
               <img src="/img/instagram.png" alt="" />
+              </a>
             </div>
             <div className="link">
               <img src="/img/language.png" alt="" />
