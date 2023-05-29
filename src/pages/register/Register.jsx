@@ -40,11 +40,12 @@ function Register() {
         ...user,
         img: url,
       });
-      navigate("/")
+      navigate("/login")
     } catch (err) {
       console.log(err);
     }
   };
+
   return (
     <div className="register">
       <form onSubmit={handleSubmit}>
