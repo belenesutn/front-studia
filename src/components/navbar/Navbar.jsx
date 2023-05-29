@@ -58,6 +58,9 @@ function Navbar() {
               <img src={currentUser.img || "/img/noavatar.jpg"} alt=""/>
               <span>{currentUser?.username}</span>
               {open && <div className="options">
+                <Link className="link" to="/edit">
+                      Editar Perfil
+                </Link>
                 {currentUser.isTutor && (
                   <>
                     <Link className="link" to="/mygigs">

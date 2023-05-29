@@ -15,6 +15,7 @@ import Class from "./pages/class/Class";
 import Messages from "./pages/messages/Messages";
 import Message from "./pages/message/Message";
 import MyGigs from "./pages/myGigs/MyGigs";
+import Edit from "./pages/edit/Edit";
 import {QueryClient, QueryClientProvider,} from "@tanstack/react-query";
 
 function App() {
@@ -39,6 +40,10 @@ function App() {
         {
           path: "/",
           element: <Home />,
+        },
+        {
+          path: "/edit",
+          element: <Edit />,
         },
         {
           path: "/about",
