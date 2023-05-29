@@ -50,10 +50,9 @@ function Navbar() {
           </Link>
         </div>
         <div className="links">
-          <span>Tutores</span>
-          <Link to="/about">
+          <Link className="link" to="/about">
           <span>Como Funciona</span></Link>
-          {!currentUser?.isTutor && <span>Conviertete en Tutor</span>}
+          {!currentUser?.isTutor && <Link className="link" to="/aboutTutor"><span>Conviertete en Tutor</span></Link>}
           {currentUser ? (
             <div className="user" onClick={()=>setOpen(!open)}>
               <img src={currentUser.img || "/img/noavatar.jpg"} alt=""/>
