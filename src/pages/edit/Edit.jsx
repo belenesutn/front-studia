@@ -7,8 +7,9 @@ import "./Edit.scss"
 function Edit() {
     
   const currentUser = getCurrentUser();
-  const { id } = currentUser._id; 
+  const id  = currentUser._id; 
   const navigate = useNavigate();
+  console.log(id);
 
   const [file, setFile] = useState(null);
   const [user, setUser] = useState({
@@ -19,8 +20,8 @@ function Edit() {
   });
 
   // Obtener los datos del usuario actualmente registrado desde el servidor
-  useEffect(() => {
-    fetch(`/api/users/${id}`)  //newRequest.get()
+  useEffect(async () => {
+   await newRequest.get(`/api/users/${id}`)  //newRequest.get()
       .then((response) => response.json())
       .then((data) => {
         setUser(data); // Actualizar el estado con los datos del usuario obtenidos del servidor
@@ -54,8 +55,8 @@ function Edit() {
 
   return (
     <div className="edit">
-      <h1>Editar perfil</h1>
       <form onSubmit={handleSubmit}>
+      <h1>Editar perfil</h1>
         <label htmlFor="img">Foto de perfil</label>
         <input type="file" onChange={(e) => setFile(e.target.files[0])} />
         <label htmlFor="country">País</label>
