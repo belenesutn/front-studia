@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import React from "react";
+import newRequest from "../../utils/newRequest";
 import { useNavigate } from "react-router-dom";
 import getCurrentUser from "../../utils/getCurrentUser";
 import "./Edit.scss"
