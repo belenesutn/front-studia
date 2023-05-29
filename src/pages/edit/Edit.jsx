@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import upload from "../../utils/upload";
 import newRequest from "../../utils/newRequest";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import getCurrentUser from "../../utils/getCurrentUser";
 import "./Edit.scss"
 
@@ -14,6 +14,7 @@ function Edit() {
 
   const [file, setFile] = useState(null);
   const [user, setUser] = useState({
+    userId: id,
     img: "",
     country: "",
     city: "",
@@ -21,7 +22,8 @@ function Edit() {
   });
 
   // Obtener los datos del usuario actualmente registrado desde el servidor
-  useEffect(async () => {
+  useEffect( () => {
+    const jorgito = async() => {
    await newRequest.get(`/users/${id}`)  //newRequest.get()
       .then((response) => response.json())
       .then((data) => {
@@ -30,7 +32,9 @@ function Edit() {
       .catch((error) => {
         console.log(error);
       });
-  }, [id]);
+  }
+  jorgito();
+}, [id]);
 
   const handleChange = (e) => {
     setUser((prev) => {
@@ -63,6 +67,7 @@ function Edit() {
         <input
           name="country"
           type="text"
+          placeholder= {currentUser.country}
           value={user.country}
           onChange={handleChange}
         />
@@ -70,12 +75,14 @@ function Edit() {
         <input
           name="city"
           type="text"
+          placeholder= {currentUser.city}
           value={user.city}
           onChange={handleChange}
         />
         <label htmlFor="desc">Descripción</label>
         <textarea
           name="desc"
+          placeholder= {currentUser.desc}
           value={user.desc}
           onChange={handleChange}
         ></textarea>
