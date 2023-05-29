@@ -43,11 +43,10 @@ function Edit() {
 
     // Enviar los datos actualizados del usuario al servidor para guardar los cambios
     try {
-      await newRequest.post(`/users/${id}`, {
+      await newRequest.put(`/users/${id}`, {
         ...user,
         img: file ? await upload(file) : user.img, // Si se seleccionó un nuevo archivo de imagen, subirlo y obtener la URL, de lo contrario, mantener la URL existente
       });
-      // Redirigir al perfil del usuario después de guardar los cambios exitosamente
       navigate("/");
     } catch (err) {
       console.log(err);
