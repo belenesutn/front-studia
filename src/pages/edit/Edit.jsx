@@ -22,7 +22,7 @@ function Edit() {
 
   // Obtener los datos del usuario actualmente registrado desde el servidor
   useEffect(async () => {
-   await newRequest.get(`/api/users/${id}`)  //newRequest.get()
+   await newRequest.get(`/users/${id}`)  //newRequest.get()
       .then((response) => response.json())
       .then((data) => {
         setUser(data); // Actualizar el estado con los datos del usuario obtenidos del servidor
@@ -43,7 +43,7 @@ function Edit() {
 
     // Enviar los datos actualizados del usuario al servidor para guardar los cambios
     try {
-      await newRequest.post(`/api/users/${id}`, {
+      await newRequest.post(`/users/${id}`, {
         ...user,
         img: file ? await upload(file) : user.img, // Si se seleccionó un nuevo archivo de imagen, subirlo y obtener la URL, de lo contrario, mantener la URL existente
       });
