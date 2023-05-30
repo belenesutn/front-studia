@@ -14,7 +14,6 @@ function Edit() {
 
   const [file, setFile] = useState(null);
   const [user, setUser] = useState({
-    userId: id,
     img: "",
     country: "",
     city: "",

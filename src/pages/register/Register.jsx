@@ -33,6 +33,18 @@ function Register() {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (
+      !user.username ||
+      !user.name ||
+      !user.email ||
+      !user.password ||
+      !user.country ||
+      !user.city ||
+      !user.desc
+    ) {
+      alert("Por favor, completa todos los campos");
+      return;
+    }
 
     const url = await upload(file);
     try {

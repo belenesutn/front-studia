@@ -72,6 +72,12 @@ const Add = () => {
   });
 
   const handleSubmit = (e) => {
+
+    if (!state.title || !state.cat || !state.desc || !state.shortDesc || !state.price) {
+      alert("Por favor, completa todos los campos obligatorios");
+      return;
+    }
+
     e.preventDefault();
     mutation.mutate(state);
     navigate("/mygigs")
@@ -144,7 +150,7 @@ const Add = () => {
             </label>
             </div>
             <label htmlFor="">Precio por hora</label>
-            <input type="number" onChange={handleChange} name="price"/>
+            <input type="number" min="0" onChange={handleChange} name="price"/>
           </div>
           
         </div>
