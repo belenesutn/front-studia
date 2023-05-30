@@ -74,7 +74,7 @@ const Add = () => {
   const handleSubmit = (e) => {
 
     if (!state.title || !state.cat || !state.desc || !state.shortDesc || !state.price) {
-      alert("Por favor, completa todos los campos obligatorios");
+      alert("Por favor, completa todos los campos");
       return;
     }
 
