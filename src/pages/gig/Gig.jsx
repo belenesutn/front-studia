@@ -13,6 +13,7 @@ import Review from "../../components/review/Review";
 function Gig() {
   const { id } = useParams();
 
+
 const { isLoading, error, data } = useQuery({
     queryKey: ["gig"],
     queryFn: () =>
@@ -46,9 +47,10 @@ const { isLoading, error, data } = useQuery({
   };
 
   const userId = data?.userId;
-  const schedule = data?.schedule
-  //const schedule3 = data?.schedule.filter(day => clase?.some(day2 => day2.dayselected == day))
-  //const schedule = schedule2?.filter(item => !schedule3.includes(item));
+  const schedule = data?.schedule;
+  const tutorId = data?.userId;
+  const studentId = currentUser._id
+  const id2 = tutorId + studentId;
 
   const currentUser = getCurrentUser();
 
@@ -218,7 +220,7 @@ const { isLoading, error, data } = useQuery({
                         </span>
                       </div>
                     )}
-                    <Link to={`/message/${id}`}>
+                    <Link to={`/message/${id2}`}>
                     <button>Contactarme</button>
                     </Link>
                   </div>
@@ -287,7 +289,8 @@ const { isLoading, error, data } = useQuery({
               ))}
             </div>
             <div>
-        <button onClick={handleOpenModal}>Reservar</button>
+                  {!currentUser?.isTutor && (
+            <button onClick={handleOpenModal}>Reservar</button>)}
         <Modal isOpen={isOpen}   style={customStyles} onRequestClose={handleCloseModal}>
           <div>
           <h2>Completar campos</h2>
