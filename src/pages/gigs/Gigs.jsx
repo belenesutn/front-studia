@@ -68,8 +68,10 @@ function Gigs() {
                 {sort === "sales" ? (
                   <span onClick={() => reSort("createdAt")}>Recientes</span>
                 ) : (
-                  <span onClick={() => reSort("sales")}>Mejor Puntuadas</span>
-                  )}
+                  <span onClick={() => reSort("sales")}>Mas Vendidas</span>
+                  )(
+                   <span onClick={() => reSort("totalStars")}>Mejor Puntuadas</span>
+                   )}
               </div>
             )}
           </div>

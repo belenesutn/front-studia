@@ -48,9 +48,6 @@ const { isLoading, error, data } = useQuery({
 
   const userId = data?.userId;
   const schedule = data?.schedule;
-  const tutorId = data?.userId;
-  const studentId = currentUser._id
-  const id2 = tutorId + studentId;
 
   const currentUser = getCurrentUser();
 
@@ -141,13 +138,17 @@ const { isLoading, error, data } = useQuery({
         });}}
     mutation2.mutate({ conversationId: id2,  desc:state.descselected}),
       
-    navigate(`/message/${id2}`);
+    navigate(`/message/${id}`);
   };
 
     const [isOpen, setIsOpen] = useState(false);
   
     const handleOpenModal = () => {
-      setIsOpen(true);
+      if (!currentUser?.isTutor) {
+        setIsOpen(true);
+      } else {
+        alert("Un tutor no puede reservar clases.");
+      }
     };
   
     const handleCloseModal = () => {
@@ -289,8 +290,7 @@ const { isLoading, error, data } = useQuery({
               ))}
             </div>
             <div>
-                  {!currentUser?.isTutor && (
-            <button onClick={handleOpenModal}>Reservar</button>)}
+                  <button onClick={handleOpenModal}>Reservar</button>
         <Modal isOpen={isOpen}   style={customStyles} onRequestClose={handleCloseModal}>
           <div>
           <h2>Completar campos</h2>
