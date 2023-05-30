@@ -12,6 +12,9 @@ import Review from "../../components/review/Review";
 
 function Gig() {
   const { id } = useParams();
+  const tutorId = data?.userId;
+  const studentId = currentUser._id
+  const id2 = tutorId + studentId;
 
 
 const { isLoading, error, data } = useQuery({
