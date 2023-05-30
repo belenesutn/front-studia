@@ -64,16 +64,15 @@ function Gigs() {
             </span>
             <img src="./img/down.png" alt="" onClick={() => setOpen(!open)} />
             {open && (
-              <div className="rightMenu">
-                {sort === "sales" ? (
-                  <span onClick={() => reSort("createdAt")}>Recientes</span>
-                ) : (
-                  <span onClick={() => reSort("sales")}>Mas Vendidas</span>
-                  )(
-                   <span onClick={() => reSort("totalStars")}>Mejor Puntuadas</span>
-                   )}
-              </div>
-            )}
+                <div className="rightMenu">
+                  <span>Ordenar por:</span>
+                  <select value={sort} onChange={(e) => reSort(e.target.value)}>
+                    <option value="createdAt">Recientes</option>
+                    <option value="sales">Más Vendidas</option>
+                    <option value="totalStars">Mejor Puntuadas</option>
+                  </select>
+                </div>
+              )}
           </div>
         </div>
         <div className="cards">
