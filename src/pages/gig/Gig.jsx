@@ -12,10 +12,6 @@ import Review from "../../components/review/Review";
 
 function Gig() {
   const { id } = useParams();
-  const tutorId = data?.userId;
-  const studentId = currentUser._id
-  const id2 = tutorId + studentId;
-
 
 const { isLoading, error, data } = useQuery({
     queryKey: ["gig"],
@@ -224,7 +220,7 @@ const { isLoading, error, data } = useQuery({
                         </span>
                       </div>
                     )}
-                    <Link to={`/message/${id2}`}>
+                    <Link to={`/message/${id}`}>
                     <button>Contactarme</button>
                     </Link>
                   </div>
