@@ -60,7 +60,7 @@ function Gigs() {
           <div className="right">
             <span className="sortBy">Ordena</span>
             <span className="sortType">
-              {sort === "sales" ? "Mejor Puntuadas" : "Recientes"}
+              {sort === "sales" ? "Mas Vendidas" : "Recientes"}
             </span>
             <img src="./img/down.png" alt="" onClick={() => setOpen(!open)} />
             {open && (
