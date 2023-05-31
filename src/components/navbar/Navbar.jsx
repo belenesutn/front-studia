@@ -44,7 +44,7 @@ function Navbar() {
         <div className="logo">
           <Link className="link" to="/">
           <img className="dot"
-                src={active ? "./img/logo.png" : "./img/logoinv.png"}
+                src={!active && pathname === "/" ? "./img/logoinv.png" : "./img/logo.png"}
                 alt=""
               />
           </Link>

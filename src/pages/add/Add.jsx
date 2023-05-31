@@ -78,6 +78,10 @@ const Add = () => {
       return;
     }
 
+    if (state.price <0)
+      {alert("Por favor ingresar un valor positivo")
+    return;}
+
     e.preventDefault();
     mutation.mutate(state);
     navigate("/mygigs")
