@@ -18,9 +18,9 @@ const Review = ({ review }) => {
   return (
     <div className="review">
       {isLoading ? (
-        "loading"
+        "Cargando"
       ) : error ? (
-        "error"
+        "Error"
       ) : (
         <div className="user">
           <img className="pp" src={data.img || "/img/noavatar.jpg"} alt="" />

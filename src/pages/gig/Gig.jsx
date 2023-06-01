@@ -229,7 +229,7 @@ const { isLoading, error, data } = useQuery({
                   <div className="items">
                     <div className="item">
                       <span className="title">De</span>
-                      <span className="desc">{dataUser.country}</span>
+                      <span className="desc">{dataUser.city + ","}, {dataUser.country}</span>
                     </div>
                     <div className="item">
                       <span className="title">Miembro desde</span>
