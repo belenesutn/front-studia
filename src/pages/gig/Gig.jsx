@@ -120,25 +120,32 @@ const { isLoading, error, data } = useQuery({
       dayselected: state.dayselected,
       descselected: state.descselected,
     };
-
+  
     const tutorId = data?.userId;
-    const studentId = currentUser._id
+    const studentId = currentUser._id;
     const id2 = tutorId + studentId;
-    
+  
     mutation.mutate(payload);
- 
+  
     try {
-      const res = await newRequest.get(`/conversations/single/${id2}`);
+      if (!state.descselected) {
+        alert("Por favor, escribe un mensaje al Tutor");
+        return;
+      }
+      const res = await newRequest?.get(`/conversations/single/${id2}`);
       navigate(`/message/${id2}`);
     } catch (err) {
       if (err.response.status === 404) {
-        const res = await newRequest.post(`/conversations/`, {
+        const res = await newRequest?.post(`/conversations/`, {
           to: currentUser.isTutor ? studentId : tutorId,
-        });}}
-    mutation2.mutate({ conversationId: id2,  desc:state.descselected}),
-      
-    navigate(`/message/${id}`);
+        });
+      }
+    }
+    mutation2.mutate({ conversationId: id2, desc: state.descselected });
+  
+    navigate(`/message/${id2}`);
   };
+  
 
     const [isOpen, setIsOpen] = useState(false);
   

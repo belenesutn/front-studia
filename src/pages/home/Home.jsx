@@ -12,7 +12,7 @@ function Home() {
         <div className="container">
           <div className="item">
             <h1>
-              Como funciona ?
+              ¿Cómo funciona?
             </h1>
             <h1>
               <i>Conectamos a alumnos y tutores para un aprendizaje personalizado</i>
