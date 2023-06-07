@@ -4,6 +4,7 @@ import "./Class.scss";
 import newRequest from "../../utils/newRequest";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
+
 const Class = () => {
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   const queryClient = useQueryClient();
@@ -36,7 +37,11 @@ const Class = () => {
     }
   };
 
- 
+  const sortedData = data?.sort((a, b) => {
+    return new Date(b.createdAt) - new Date(a.createdAt);    
+  });
+
+  console.log(sortedData);
   const mutation = useMutation({
     mutationFn: (id) => {
       return newRequest.put(`/class/${id}`, {state: "ACEPTADA"});
@@ -129,16 +134,17 @@ const Class = () => {
               <th>Acciones</th>              
               <th>Finalizar</th>
             </tr>
-            {data.map((e) => (
+            {sortedData?.map((e) => (
               <tr key={e._id}>
                 <td>
                   <img className="image" src={e.img} alt="" />
                 </td>
-                <td className="sup">{e.title}</td>
+                <td><Link to={`/gig/${e.gigId}`} className="link-unstyled">
+                {e.title}</Link></td>
                 <td>{e.price}</td>
                 <td>{e.dayselected}</td>
                 <td>{e.state}</td>
-                <td style={{display: "flex", flexDirection: "row"}}>
+                <td style={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection:"row"}}>
                   
                       <img
                         className="message"
@@ -148,7 +154,7 @@ const Class = () => {
                       />
                       
                     
-                      {currentUser.isTutor && e.state === "CREADO" && (
+                      {currentUser.isTutor && e.state === "CREADA" && (
                           <>
                             <img
                               className="message"
@@ -165,7 +171,7 @@ const Class = () => {
                           </>
                         )}
                       </td>
-                      <td>
+                      <td style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
                        {currentUser.isTutor && e.state === "ACEPTADA" && (
                           <>
                             <button className="botonFinalizar" onClick={() => handleFinalizar(e._id, e.gigId)}>

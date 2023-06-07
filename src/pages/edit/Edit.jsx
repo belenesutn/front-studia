@@ -33,6 +33,7 @@ function Edit() {
       });
   }
   jorgito();
+  setUser(currentUser);
 }, [id]);
 
   const handleChange = (e) => {
