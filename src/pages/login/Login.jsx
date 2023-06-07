@@ -33,7 +33,7 @@ function Login() {
           onChange={(e) => setUsername(e.target.value)}
         />
 
-        <label htmlFor="">Contrasena</label>
+        <label htmlFor="">Contraseña</label>
         <input
           name="password"
           type="password"
