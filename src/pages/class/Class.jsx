@@ -171,7 +171,7 @@ const Class = () => {
                           </>
                         )}
                       </td>
-                      <td style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                      <td style={{ justifyContent: "center", alignItems: "center" }}>
                        {currentUser.isTutor && e.state === "ACEPTADA" && (
                           <>
                             <button className="botonFinalizar" onClick={() => handleFinalizar(e._id, e.gigId)}>
