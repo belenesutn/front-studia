@@ -14,7 +14,7 @@ function Featured() {
       <div className="container">
         <div className="left">
           <h1>
-          Encuentra al <span>tutor</span> perfecto para tus clases particulares
+          Encuentra al <span>tutor perfecto</span> para tus clases particulares
           </h1>
           <div className="search">
             <div className="searchInput">
@@ -26,7 +26,7 @@ function Featured() {
           </div>
         </div>
         <div className="right">
-          <img src="./img/man.png" alt="" />
+          <img src="./img/ppasc3.png" alt="" />
         </div>
       </div>
     </div>
