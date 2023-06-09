@@ -162,7 +162,7 @@ const Class = () => {
                               alt=""
                               onClick={() => handleAceptar(e._id)}
                             />
-                            <img
+                            <img 
                               className="message"
                               src="./img/cross.png"
                               alt=""

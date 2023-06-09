@@ -81,7 +81,7 @@ function MyGigs() {
                     alt=""
                     onClick={() => handleEdit(gig._id)}
                   />
-                  <img
+                  <img style={{marginLeft: "10px"}}
                     className="delete"
                     src="./img/delete.png"
                     alt=""

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Navbar.scss";
 import newRequest from "../../utils/newRequest";
+import logo from "../../assets/logo.png"
+import logoinv from "../../assets/logoinv.png"
 
 function Navbar() {
   const [active, setActive] = useState(false);
@@ -44,7 +46,7 @@ function Navbar() {
         <div className="logo">
           <Link className="link" to="/">
           <img className="dot"
-                src={!active && pathname === "/" ? "./img/logoinv.png" : "./img/logo.png"}
+                src={!active && pathname === "/" ? logoinv : logo}
                 alt=""
               />
           </Link>
@@ -55,7 +57,7 @@ function Navbar() {
           {!currentUser?.isTutor && <Link className="link" to="/aboutTutor"><span>Conviértete en Tutor</span></Link>}
           {currentUser ? (
             <div className="user" onClick={()=>setOpen(!open)}>
-              <img src={currentUser.img || "/img/noavatar.jpg"} alt=""/>
+              <img src={currentUser.img || "./img/noavatar.jpg"} alt=""/>
               <span>{currentUser?.username}</span>
               {open && <div className="options">
                 <Link className="link" to="/edit">
