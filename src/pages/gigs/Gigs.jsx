@@ -55,7 +55,7 @@ function Gigs() {
         <span className="breadcrumbs">Studia</span>
         <h1>Clases</h1>
         <p>
-          Encuentra tu Tutor ideal para tus clases
+           Encuentra al tutor perfecto
         </p>
         
         <div className="menu">
@@ -83,9 +83,9 @@ function Gigs() {
             {open && (
               <div className="rightMenu">
                 {sort === "sales" ? (
-                  <span onClick={() => reSort("createdAt")}>Recientes</span>
+                  <span onClick={() => reSort("createdAt")}>Más Recientes</span>
                 ) : (
-                  <span onClick={() => reSort("sales")}>Mas Vendidas</span>
+                  <span onClick={() => reSort("sales")}>Más Vendidas</span>
                   )}
               </div>
             )}

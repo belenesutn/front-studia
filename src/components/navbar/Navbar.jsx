@@ -51,8 +51,8 @@ function Navbar() {
         </div>
         <div className="links">
           <Link className="link" to="/about">
-          <span>Como Funciona</span></Link>
-          {!currentUser?.isTutor && <Link className="link" to="/aboutTutor"><span>Conviertete en Tutor</span></Link>}
+          <span>Cómo Funciona</span></Link>
+          {!currentUser?.isTutor && <Link className="link" to="/aboutTutor"><span>Conviértete en Tutor</span></Link>}
           {currentUser ? (
             <div className="user" onClick={()=>setOpen(!open)}>
               <img src={currentUser.img || "/img/noavatar.jpg"} alt=""/>
@@ -97,19 +97,19 @@ function Navbar() {
           <hr />
           <div className="menu">
             <Link onClick={apply} className="link menuLink" to="/gigs?cat=quimica">
-              Ingenieria Quimica
+            Ingeniería Química
             </Link>
             <Link onClick={apply} className="link menuLink" to="/gigs?cat=sistema">
-              Ingenieria en Sistemas
+            Ingeniería en Sistemas
             </Link>
             <Link onClick={apply} className="link menuLink" to="/gigs?cat=electrica">
-               Ingenieria Electrica
+            Ingeniería Eléctrica
             </Link>
             <Link onClick={apply} className="link menuLink" to="/gigs?cat=mecanica">
-               Ingenieria Mecanica
+            Ingeniería Mecánica
             </Link>
             <Link onClick={apply} className="link menuLink" to="/gigs?cat=basica">
-              Materias Basicas
+              Materias Básicas
             </Link>
           </div>
           <hr />

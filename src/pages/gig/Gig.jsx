@@ -29,8 +29,6 @@ const { isLoading, error, data } = useQuery({
       }),
   });
 
-
-
   const customStyles = {
     content: {
       top: '50%',
@@ -51,9 +49,6 @@ const { isLoading, error, data } = useQuery({
   const schedule = data?.schedule;
 
   const currentUser = getCurrentUser();
-
-  console.log(schedule);
-
 
   const isFinalizada = clase?.some(
     review => review.state === "FINALIZADA" && review.studentId === currentUser._id);
@@ -152,7 +147,9 @@ const { isLoading, error, data } = useQuery({
     const [isOpen, setIsOpen] = useState(false);
   
     const handleOpenModal = () => {
-      if (!currentUser?.isTutor) {
+      if (!currentUser) {
+        alert("Por favor, regístrate para reservar clases.");
+      } else if (!currentUser.isTutor) {
         setIsOpen(true);
       } else {
         alert("Un tutor no puede reservar clases.");
