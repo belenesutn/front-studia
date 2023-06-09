@@ -4,10 +4,11 @@ import "./MyGigs.scss";
 import getCurrentUser from "../../utils/getCurrentUser";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import newRequest from "../../utils/newRequest";
+import { useNavigate } from "react-router-dom";
 
 function MyGigs() {
   const currentUser = getCurrentUser();
-
+  const navigate = useNavigate();
   const queryClient = useQueryClient();
 
   const { isLoading, error, data } = useQuery({
@@ -33,6 +34,13 @@ function MyGigs() {
     mutation.mutate(id);
   };
   console.log(currentUser._id);
+ 
+  const handleEdit = (id) => {
+      navigate(`/editgig/${id}`);
+  };
+
+
+
   return (
     <div className="myGigs">
       {isLoading ? (
@@ -62,10 +70,17 @@ function MyGigs() {
                 <td>
                   <img className="image" src={gig.image} alt="" />
                 </td>
-                <td>{gig.title}</td>
+                <td><Link to={`/gig/${gig._id}`} className="link-unstyled">
+                {gig.title}</Link></td>
                 <td>{gig.price}</td>
                 <td>{gig.sales}</td>
                 <td>
+                <img
+                    className="delete"
+                    src="./img/edit.png"
+                    alt=""
+                    onClick={() => handleEdit(gig._id)}
+                  />
                   <img
                     className="delete"
                     src="./img/delete.png"

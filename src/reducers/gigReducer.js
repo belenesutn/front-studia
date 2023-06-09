@@ -7,7 +7,7 @@ export const INITIAL_STATE = {
     shortDesc: "",
     schedule: [],
     topics: [],
-    price: 0,
+    price: null,
     isOnline:false,
   };
   

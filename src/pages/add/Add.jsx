@@ -5,7 +5,7 @@ import upload from "../../utils/upload";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import newRequest from "../../utils/newRequest";
 import { useNavigate } from "react-router-dom";
-import { dias, fecha } from "../../data";
+import { fecha } from "../../data";
 import Multipleselect from "../../components/multipleselect/Multipleselect";
 
 const Add = () => {
@@ -28,7 +28,6 @@ const Add = () => {
       type: "CHANGE_INPUT",
       payload: { name: "schedule", value: e.map(option => option.value) },
     });
-
   }
 
    const handletopics = (e) => {
@@ -160,7 +159,7 @@ const Add = () => {
         </div>
         <div className="container">
         <div className="add">
-        <button className="boton" onClick={handleSubmit}>
+        <button onClick={handleSubmit}>
                 {uploading ? "Creando..." : "Crear"}
         </button>
                 </div>
