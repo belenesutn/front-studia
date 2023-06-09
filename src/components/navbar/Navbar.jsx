@@ -84,9 +84,9 @@ function Navbar() {
             </div>
           ) : (
             <>
-              <Link to="/login" className="link">Login</Link>
+              <Link to="/login" className="link">Inicia Sesión</Link>
               <Link className="link" to="/register">
-                <button>Registrate</button>
+                <button>Registrate!</button>
               </Link>
             </>
           )}

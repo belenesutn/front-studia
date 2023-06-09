@@ -47,6 +47,9 @@ const { isLoading, error, data } = useQuery({
 
   const userId = data?.userId;
   const schedule = data?.schedule;
+  const idtutor = data?.userId;
+  const idusuario = currentUser._id;
+  const idmensaje = idtutor + idusuario;
 
   const currentUser = getCurrentUser();
 
@@ -226,9 +229,15 @@ const { isLoading, error, data } = useQuery({
                         </span>
                       </div>
                     )}
-                    <Link to={`/message/${id}`}>
-                    <button>Contactarme</button>
-                    </Link>
+                    {currentUser ? (
+                      <Link to={`/message/${idmensaje}`}>
+                        <button>Contactarme</button>
+                      </Link>
+                    ) : (
+                      <button onClick={() => alert("Por favor, regístrate para contactar")}>
+                        Contactarme
+                      </button>
+                    )}
                   </div>
                 </div>
                 <div className="box">
