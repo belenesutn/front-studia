@@ -159,7 +159,7 @@ const Add = () => {
         </div>
         <div className="container">
         <div className="add">
-        <button onClick={handleSubmit}>
+        <button className="boton" onClick={handleSubmit}>
                 {uploading ? "Creando..." : "Crear"}
         </button>
                 </div>
