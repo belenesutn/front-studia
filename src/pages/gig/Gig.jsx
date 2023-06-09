@@ -47,9 +47,6 @@ const { isLoading, error, data } = useQuery({
 
   const userId = data?.userId;
   const schedule = data?.schedule;
-  const idtutor = data?.userId;
-  const idusuario = currentUser._id;
-  const idmensaje = idtutor + idusuario;
 
   const currentUser = getCurrentUser();
 
@@ -230,7 +227,7 @@ const { isLoading, error, data } = useQuery({
                       </div>
                     )}
                     {currentUser ? (
-                      <Link to={`/message/${idmensaje}`}>
+                      <Link to={`/messages/`}>
                         <button>Contactarme</button>
                       </Link>
                     ) : (
