@@ -18,8 +18,18 @@ import MyGigs from "./pages/myGigs/MyGigs";
 import Edit from "./pages/edit/Edit";
 import Editgigs from "./pages/editgigs/Editgigs";
 import {QueryClient, QueryClientProvider,} from "@tanstack/react-query";
+import ReactGA from 'react-ga';
+import { useEffect } from 'react';
+
+function initializeReactGA() {
+  ReactGA.initialize('G-XKHVTCJT7Y'); 
+  ReactGA.pageview(window.location.pathname + window.location.search);
+}
 
 function App() {
+  useEffect(() => {
+    initializeReactGA();
+  }, []);
   const queryClient = new QueryClient();
   const Layout = () => {
     return (
