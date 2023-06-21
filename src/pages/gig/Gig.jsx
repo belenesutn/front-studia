@@ -185,7 +185,7 @@ const { isLoading, error, data } = useQuery({
                   src={dataUser.img || "/img/noavatar.jpg"}
                   alt=""
                 />
-                <span>{dataUser.username}</span>
+                <span>{dataUser.name}</span>
                 {!isNaN(data.totalStars / data.starNumber) && (
                   <div className="stars">
                     {Array(Math.round(data.totalStars / data.starNumber))
@@ -213,7 +213,7 @@ const { isLoading, error, data } = useQuery({
                 <div className="user">
                   <img src={dataUser.img || "/img/noavatar.jpg"} alt="" />
                   <div className="info">
-                    <span>{dataUser.username}</span>
+                    <span>{dataUser.name}</span>
                     {!isNaN(data.totalStars / data.starNumber) && (
                       <div className="stars">
                         {Array(Math.round(data.totalStars / data.starNumber))
@@ -241,7 +241,7 @@ const { isLoading, error, data } = useQuery({
                   <div className="items">
                     <div className="item">
                       <span className="title">De</span>
-                      <span className="desc">{dataUser.city + ","}, {dataUser.country}</span>
+                      <span className="desc">{dataUser.city}, {dataUser.country}</span>
                     </div>
                     <div className="item">
                       <span className="title">Miembro desde</span>
