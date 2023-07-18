@@ -41,7 +41,6 @@ const Class = () => {
     return new Date(b.createdAt) - new Date(a.createdAt);    
   });
 
-  console.log(sortedData);
   const mutation = useMutation({
     mutationFn: (id) => {
       return newRequest.put(`/class/${id}`, {state: "ACEPTADA"});
@@ -62,7 +61,6 @@ const Class = () => {
 
   const mutation3 = useMutation({
     mutationFn: async (data) => {
-      console.log(data);
       return newRequest.put(`/class/end/${data.id}`, {state: "FINALIZADA", gigId: data.gig});
     },
     onSuccess: () => {

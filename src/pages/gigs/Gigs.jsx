@@ -28,8 +28,6 @@ function Gigs() {
         }),
   });
 
-  console.log(data);
-
   const handleSubmit = () => {
     navigate(`/gigs?search=${input}`);
     location.reload();

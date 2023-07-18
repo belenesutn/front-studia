@@ -86,7 +86,6 @@ const Add = () => {
     navigate("/mygigs")
   };
 
-  console.log(state)
   return (
     <div className="add">
       <div className="container">

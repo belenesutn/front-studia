@@ -33,7 +33,6 @@ function MyGigs() {
   const handleDelete = (id) => {
     mutation.mutate(id);
   };
-  console.log(currentUser._id);
  
   const handleEdit = (id) => {
       navigate(`/editgig/${id}`);

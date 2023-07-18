@@ -10,7 +10,7 @@ function Edit() {
   const currentUser = getCurrentUser();
   const id  = currentUser._id; 
   const navigate = useNavigate();
-  console.log(id);
+  
 
   const [file, setFile] = useState(null);
   const [user, setUser] = useState({
